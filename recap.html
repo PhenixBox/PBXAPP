@@ -12,20 +12,20 @@
   </header>
 
   <main>
-    <h1>Récapitulatif de votre commande</h1>
+    <div class="form-container">
+      <h1>Récapitulatif de votre commande</h1>
 
-    <!-- Zone récapitulative avec un encadré élégant -->
-    <div id="recap">
-      <!-- Le récapitulatif sera inséré ici -->
+      <div id="recap">
+        <!-- Le récapitulatif de la commande sera injecté ici par le JavaScript -->
+      </div>
+
+      <label for="acceptCGU">
+        <input type="checkbox" id="acceptCGU"> J'ai lu et j'accepte les 
+        <a href="cgu.html" target="_blank">CGU</a> et les <a href="cgv.html" target="_blank">CGV</a>.
+      </label>
+
+      <button id="valider" disabled>Valider et procéder au paiement</button>
     </div>
-
-    <!-- Case pour accepter les CGU et CGV -->
-    <label>
-      <input type="checkbox" id="acceptCGU" required> J'ai lu et j'accepte les <a href="cgu.html" target="_blank">CGU</a> et les <a href="cgv.html" target="_blank">CGV</a>.
-    </label><br><br>
-
-    <!-- Le bouton sera activé une fois que la case est cochée -->
-    <button id="valider" disabled>Valider et procéder au paiement</button>
   </main>
 
   <script src="script.js"></script>
