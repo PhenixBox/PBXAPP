@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'abonnement</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <img src="https://www.phenix-recyclage.com/img/global/phenix-recyclage.png" alt="Logo Phenix" class="logo">
+  </header>
+  
+  <main>
+    <h1>Formulaire d'abonnement à la location de box</h1>
+
+    <form id="form-abonnement">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required><br><br>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" required><br><br>
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <fieldset>
+        <legend>Adresse :</legend>
+        <label for="numero">Numéro de voie :</label>
+        <input type="text" id="numero" name="numero" required><br><br>
+
+        <label for="voie">Nom de voie :</label>
+        <input type="text" id="voie" name="voie" required><br><br>
+
+        <label for="codePostal">Code postal :</label>
+        <input type="text" id="codePostal" name="codePostal" required><br><br>
+
+        <label for="ville">Ville :</label>
+        <input type="text" id="ville" name="ville" required><br><br>
+      </fieldset>
+
+      <label for="box">Sélectionnez la taille du box :</label>
+      <select id="box" name="box" required>
+        <option value="15m² pour 90€">15m² pour 90€</option>
+        <option value="30m² pour 120€">30m² pour 120€</option>
+      </select><br><br>
+
+      <button type="submit">Valider</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

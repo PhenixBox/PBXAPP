@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <img src="https://www.phenix-recyclage.com/img/global/phenix-recyclage.png" alt="Logo Phenix" class="logo">
+  </header>
+
+  <main>
+    <h1>Procéder au paiement</h1>
+
+    <form id="payment-form">
+      <label for="card-element">Informations de la carte :</label>
+      <div id="card-element"></div>
+      <button type="submit">Payer</button>
+    </form>
+  </main>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js"></script>
+</body>
+</html>
