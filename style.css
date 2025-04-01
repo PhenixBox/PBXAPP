@@ -1,4 +1,4 @@
-/*/* Global Styles */
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;  /* Utilisation d'une police élégante et moderne */
   background-color: #f4f9fd; /* Bleu pastel clair */
   color: #333;
   line-height: 1.6;
@@ -15,8 +15,28 @@ body {
   align-items: center;
   height: 100vh;
   padding: 20px;
+  position: relative;
 }
 
+/* Ajout des bandes jaunes verticales sur les bords */
+body::before, body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10vw;
+  background-color: #ffcf47; /* Jaune pastel */
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+
+/* Header */
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -25,21 +45,32 @@ header {
 .logo {
   width: 150px;
   height: auto;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
+/* Main Section */
 main {
   background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Titre principal */
 h1 {
   text-align: center;
   color: #3b8d99; /* Bleu pastel doux */
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 /* Style des formulaires */
@@ -49,53 +80,56 @@ form {
 }
 
 label {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 8px;
   color: #666;
+  font-weight: 500;
 }
 
 input, select {
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 12px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   transition: border-color 0.3s ease;
+  outline: none;
 }
 
 input:focus, select:focus {
   border-color: #3b8d99; /* Bleu pastel doux */
-  outline: none;
 }
 
 button {
   background-color: #ffcf47; /* Jaune pastel */
   color: white;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 
 button:hover {
   background-color: #ffb84c; /* Jaune légèrement plus foncé */
 }
 
-/* Style de la zone récapitulatif */
+/* Style pour la zone récapitulatif */
 #recap {
   background-color: #eef7fc; /* Bleu pastel clair */
   padding: 20px;
-  border: 2px solid #d0e7f7;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   margin-bottom: 20px;
+  border-left: 4px solid #3b8d99; /* Ligne décorative à gauche */
+  border-right: 4px solid #3b8d99; /* Ligne décorative à droite */
 }
 
 #recap p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #444;
   margin-bottom: 10px;
 }
@@ -119,13 +153,14 @@ label a:hover {
 #valider {
   background-color: #7bbf97; /* Vert doux */
   color: white;
-  padding: 12px;
+  padding: 14px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1.2rem;
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
+  text-transform: uppercase;
 }
 
 #valider[disabled] {
