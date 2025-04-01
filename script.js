@@ -27,7 +27,7 @@ document.getElementById('form-abonnement').addEventListener('submit', function(e
   window.location.href = 'recap.html';
 });
 
-// Page 2: Récupérer les données du localStorage et afficher le récapitulatif
+// Page 2: Affichage du récapitulatif
 window.addEventListener('DOMContentLoaded', function() {
   const recapContainer = document.getElementById('recap');
 
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const adresse = `${localStorage.getItem('numero')} ${localStorage.getItem('voie')}, ${localStorage.getItem('codePostal')} ${localStorage.getItem('ville')}`;
   const box = localStorage.getItem('box');
 
-  // Afficher le récapitulatif
+  // Afficher le récapitulatif de la commande
   recapContainer.innerHTML = `
     <p><strong>Nom :</strong> ${nom}</p>
     <p><strong>Prénom :</strong> ${prenom}</p>
@@ -47,8 +47,17 @@ window.addEventListener('DOMContentLoaded', function() {
     <p><strong>Box choisi :</strong> ${box}</p>
   `;
 
-  // Activer le bouton Valider lorsque la case est cochée
-  document.getElementById('acceptCGU').addEventListener('change', function() {
-    document.getElementById('valider').disabled = !this.checked;
+  // Gérer l'activation du bouton de validation en fonction de la case à cocher
+  const checkbox = document.getElementById('acceptCGU');
+  const validerButton = document.getElementById('valider');
+
+  checkbox.addEventListener('change', function() {
+    validerButton.disabled = !checkbox.checked;
+  });
+
+  // Lorsque le bouton est cliqué, rediriger vers la page de paiement
+  validerButton.addEventListener('click', function() {
+    window.location.href = 'payment.html';  // Rediriger vers la page de paiement
   });
 });
+
