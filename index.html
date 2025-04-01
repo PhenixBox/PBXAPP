@@ -3,52 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulaire d'abonnement</title>
+  <title>Formulaire d'inscription</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <header>
     <img src="https://www.phenix-recyclage.com/img/global/phenix-recyclage.png" alt="Logo Phenix" class="logo">
   </header>
-  
-  <main>
-    <h1>Formulaire d'abonnement à la location de box</h1>
 
-    <form id="form-abonnement">
+  <main>
+    <h1>Formulaire d'inscription</h1>
+    
+    <form id="formulaire">
       <label for="nom">Nom :</label>
-      <input type="text" id="nom" name="nom" required><br><br>
+      <input type="text" id="nom" required><br><br>
 
       <label for="prenom">Prénom :</label>
-      <input type="text" id="prenom" name="prenom" required><br><br>
+      <input type="text" id="prenom" required><br><br>
 
       <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" id="email" required><br><br>
 
-      <fieldset>
-        <legend>Adresse :</legend>
-        <label for="numero">Numéro de voie :</label>
-        <input type="text" id="numero" name="numero" required><br><br>
+      <label for="numero">Numéro de voie :</label>
+      <input type="text" id="numero" required><br><br>
 
-        <label for="voie">Nom de voie :</label>
-        <input type="text" id="voie" name="voie" required><br><br>
+      <label for="voie">Nom de voie :</label>
+      <input type="text" id="voie" required><br><br>
 
-        <label for="codePostal">Code postal :</label>
-        <input type="text" id="codePostal" name="codePostal" required><br><br>
+      <label for="codePostal">Code postal :</label>
+      <input type="text" id="codePostal" required><br><br>
 
-        <label for="ville">Ville :</label>
-        <input type="text" id="ville" name="ville" required><br><br>
-      </fieldset>
+      <label for="ville">Ville :</label>
+      <input type="text" id="ville" required><br><br>
 
-      <label for="box">Sélectionnez la taille du box :</label>
-      <select id="box" name="box" required>
-        <option value="15m² pour 90€">15m² pour 90€</option>
-        <option value="30m² pour 120€">30m² pour 120€</option>
+      <label for="box">Choisir la taille du box :</label>
+      <select id="box" required>
+        <option value="15m²">15m² - 90€/mois</option>
+        <option value="30m²">30m² - 120€/mois</option>
       </select><br><br>
 
       <button type="submit">Valider</button>
     </form>
   </main>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('formulaire').addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche l'envoi du formulaire
+
+      // Récupérer les données du formulaire
+      const nom = document.getElementById('nom').value;
+      const prenom = document.getElementById('prenom').value;
+      const email = document.getElementById('email').value;
+      const numero = document.getElementById('numero').value;
+      const voie = document.getElementById('voie').value;
+      const codePostal = document.getElementById('codePostal').value;
+      const ville = document.getElementById('ville').value;
+      const box = document.getElementById('box').value;
+
+      // Stocker les données dans localStorage
+      localStorage.setItem('nom', nom);
+      localStorage.setItem('prenom', prenom);
+      localStorage.setItem('email', email);
+      localStorage.setItem('numero', numero);
+      localStorage.setItem('voie', voie);
+      localStorage.setItem('codePostal', codePostal);
+      localStorage.setItem('ville', ville);
+      localStorage.setItem('box', box);
+
+      // Rediriger vers la page récapitulative
+      window.location.href = 'recap.html';
+    });
+  </script>
 </body>
 </html>
