@@ -27,7 +27,6 @@ document.getElementById('form-abonnement').addEventListener('submit', function(e
   window.location.href = 'recap.html';
 });
 
-// Page 2: Affichage du récapitulatif
 window.addEventListener('DOMContentLoaded', function() {
   const recapContainer = document.getElementById('recap');
 
@@ -51,6 +50,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const checkbox = document.getElementById('acceptCGU');
   const validerButton = document.getElementById('valider');
 
+  // Activer/désactiver le bouton en fonction de la case à cocher
   checkbox.addEventListener('change', function() {
     validerButton.disabled = !checkbox.checked;
   });
