@@ -6,10 +6,9 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;  /* Utilisation d'une police élégante et moderne */
-  background-color: #f4f9fd; /* Bleu pastel clair */
+  font-family: 'Roboto', sans-serif; /* Police élégante et moderne */
+  background-color: #f4f9fd; /* Bleu pastel */
   color: #333;
-  line-height: 1.6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +17,6 @@ body {
   position: relative;
 }
 
-/* Ajout des bandes jaunes verticales sur les bords */
 body::before, body::after {
   content: '';
   position: absolute;
@@ -36,7 +34,6 @@ body::after {
   right: 0;
 }
 
-/* Header */
 header {
   text-align: center;
   margin-bottom: 20px;
@@ -51,57 +48,60 @@ header {
   transform: translateX(-50%);
 }
 
-/* Main Section */
 main {
+  width: 100%;
+  max-width: 600px;
   background-color: #fff;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
   position: relative;
   z-index: 1;
 }
 
-/* Titre principal */
 h1 {
   text-align: center;
-  color: #3b8d99; /* Bleu pastel doux */
+  color: #3b8d99;
   font-size: 2.5rem;
   font-weight: 500;
   margin-bottom: 30px;
-  text-transform: uppercase;
 }
 
-/* Style des formulaires */
-form {
+.form-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+#recap {
+  background-color: #eef7fc; /* Bleu pastel */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  border-left: 4px solid #3b8d99;
+  border-right: 4px solid #3b8d99;
+  width: 100%;
+}
+
+#recap p {
+  font-size: 1.2rem;
+  color: #444;
 }
 
 label {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 8px;
   color: #666;
   font-weight: 500;
 }
 
-input, select {
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  transition: border-color 0.3s ease;
-  outline: none;
-}
-
-input:focus, select:focus {
-  border-color: #3b8d99; /* Bleu pastel doux */
+input[type="checkbox"] {
+  margin-right: 10px;
 }
 
 button {
-  background-color: #ffcf47; /* Jaune pastel */
+  background-color: #ffcf47;
   color: white;
   padding: 14px;
   border: none;
@@ -109,58 +109,12 @@ button {
   font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
-  text-transform: uppercase;
+  width: 100%;
+  margin-top: 20px;
 }
 
 button:hover {
-  background-color: #ffb84c; /* Jaune légèrement plus foncé */
-}
-
-/* Style pour la zone récapitulatif */
-#recap {
-  background-color: #eef7fc; /* Bleu pastel clair */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  margin-bottom: 20px;
-  border-left: 4px solid #3b8d99; /* Ligne décorative à gauche */
-  border-right: 4px solid #3b8d99; /* Ligne décorative à droite */
-}
-
-#recap p {
-  font-size: 1.2rem;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-#recap strong {
-  color: #3b8d99; /* Bleu pastel doux */
-}
-
-/* Case à cocher des CGU et CGV */
-label a {
-  color: #3b8d99;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-label a:hover {
-  text-decoration: underline;
-}
-
-/* Style pour le bouton "Valider" */
-#valider {
-  background-color: #7bbf97; /* Vert doux */
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 20px;
-  text-transform: uppercase;
+  background-color: #ffb84c;
 }
 
 #valider[disabled] {
@@ -168,7 +122,7 @@ label a:hover {
   cursor: not-allowed;
 }
 
-/* Style pour les liens */
+/* Styling des liens */
 a {
   color: #3b8d99;
   text-decoration: none;
@@ -177,3 +131,4 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
